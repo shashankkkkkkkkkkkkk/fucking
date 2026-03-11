@@ -7,7 +7,7 @@ import { MessageSquare } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { CustomCursor } from "./components/CustomCursor";
 import { AIAssistant } from "./components/AIAssistant";
-
+import logo from "../assets/fenx.png";
 
 // Lazy load pages for performance
 const HomePage = lazy(() => import("./pages/Home").then(m => ({ default: m.HomePage })));
@@ -62,7 +62,7 @@ const LoadingScreen = () => (
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center overflow-hidden mb-8 mx-auto shadow-2xl shadow-white/10"
       >
-        <img src="https://i.imgur.com/uR8v7fO.jpeg" alt="FenX AI Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+        <img src={logo} alt="FenX AI Logo" />
       </motion.div>
       <div className="w-48 h-1 bg-white/5 mx-auto rounded-full overflow-hidden">
         <motion.div 

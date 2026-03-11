@@ -109,7 +109,7 @@ export const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-8">
               <div className="w-8 h-8 bg-white rounded flex items-center justify-center overflow-hidden">
-                <img src="https://i.imgur.com/uR8v7fO.jpeg" alt="FenX AI Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src={logo} alt="FenX AI Logo" />
               </div>
               <span className="text-xl font-bold tracking-tighter">FenX AI</span>
             </Link>
