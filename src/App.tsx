@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { CustomCursor } from "./components/CustomCursor";
 import { AIAssistant } from "./components/AIAssistant";
 
+
 // Lazy load pages for performance
 const HomePage = lazy(() => import("./pages/Home").then(m => ({ default: m.HomePage })));
 const ServicesPage = lazy(() => import("./pages/Services").then(m => ({ default: m.ServicesPage })));

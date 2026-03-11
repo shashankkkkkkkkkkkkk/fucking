@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, ArrowRight } from "lucide-react";
 import { Magnetic } from "./Magnetic";
-
+import logo from "../assets/fenx.png";
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -28,7 +28,7 @@ export const Navbar = () => {
         <Magnetic strength={0.2}>
           <Link to="/" className="flex items-center gap-3 group relative">
             <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center overflow-hidden group-hover:scale-110 transition-transform duration-500 shadow-[0_0_20px_rgba(255,255,255,0.1)] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-              <img src="https://i.imgur.com/uR8v7fO.jpeg" alt="FenX AI Logo" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+             <img src={logo} alt="FenX AI Logo" className="w-full h-full object-cover" />
             </div>
             <span className="text-2xl font-bold tracking-tighter">FenX <span className="text-white">AI</span></span>
           </Link>
