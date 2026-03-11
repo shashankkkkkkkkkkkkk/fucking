@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space+Grotesk", sans-serif;
+  --color-brand-primary: #FFFFFF;
+  --color-brand-secondary: #F5F2ED;
+  --color-bg-navy: #00122e;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-navy text-slate-200 antialiased selection:bg-white/30 selection:text-white;
+    font-family: var(--font-sans);
+    cursor: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/[0.03] backdrop-blur-2xl border border-white/10;
+  }
+
+  .glass-hover {
+    @apply hover:bg-white/[0.08] transition-all duration-500;
+  }
+
+  .text-reveal {
+    @apply overflow-hidden inline-block;
+  }
+
+  .card-glow {
+    @apply relative overflow-hidden;
+  }
+
+  .card-glow::after {
+    content: "";
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500 bg-[radial-gradient(circle_at_var(--x)_var(--y),rgba(255,255,255,0.1),transparent_40%)];
+  }
+
+  .card-glow:hover::after {
+    @apply opacity-100;
+  }
+}
