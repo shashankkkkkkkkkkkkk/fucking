@@ -62,7 +62,7 @@ const LoadingScreen = () => (
         transition={{ duration: 0.6, ease: "easeOut" }}
         className="w-24 h-24 bg-white rounded-2xl flex items-center justify-center overflow-hidden mb-8 mx-auto shadow-2xl shadow-white/10"
       >
-        <img src={logo} alt="FenX AI Logo" />
+       <img src="/fenx.png" alt="FenX AI Logo" className="w-full h-full object-cover" />
       </motion.div>
       <div className="w-48 h-1 bg-white/5 mx-auto rounded-full overflow-hidden">
         <motion.div 
