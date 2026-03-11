@@ -1,31 +1,22 @@
-import nodemailer from 'nodemailer';
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const sendEmail = async (to: string, subject: string, body: string) => {
-  // Configure transporter with environment variables
-  // Defaulting to a common SMTP setup (e.g., Gmail, SendGrid, etc.)
-  const transporter = nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: process.env.SMTP_SECURE === 'true',
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
-
   try {
-    const info = await transporter.sendMail({
-      from: `"FenX AI" <${process.env.SMTP_USER}>`,
-      to,
-      subject,
+    const response = await resend.emails.send({
+      from: "FenX AI <onboarding@resend.dev>",
+      to: [to],
+      subject: subject,
+      html: body.replace(/\n/g, "<br>"),
       text: body,
-      html: body.replace(/\n/g, '<br>'),
     });
-    console.log('Email sent: %s', info.messageId);
-    return info;
+
+    console.log("✅ Email sent:", response);
+    return response;
+
   } catch (error) {
-    console.error('Error sending email:', error);
-    // We don't throw here to keep the API non-blocking as requested
+    console.error("❌ Error sending email:", error);
     return null;
   }
 };
