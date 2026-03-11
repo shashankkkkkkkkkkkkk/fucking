@@ -7,7 +7,7 @@ import { MessageSquare } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { CustomCursor } from "./components/CustomCursor";
 import { AIAssistant } from "./components/AIAssistant";
-import logo from "./assets/fenx.png";
+import logo from "../assets/fenx.png";
 
 // Lazy load pages for performance
 const HomePage = lazy(() => import("./pages/Home").then(m => ({ default: m.HomePage })));
