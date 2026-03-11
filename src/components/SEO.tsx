@@ -16,7 +16,7 @@ export const SEO: React.FC<SEOProps> = ({
   description = "FenX AI builds intelligent automation that captures, follows up, and converts customers automatically. The future of autonomous business systems.",
   canonical = "https://fenx.ai",
   ogType = "website",
-  ogImage = "https://i.imgur.com/uR8v7fO.jpeg",
+  ogImage = "/fenx.png",
   twitterCard = "summary_large_image",
   schema
 }) => {
@@ -58,7 +58,7 @@ export const defaultSchema = {
   "@type": "Organization",
   "name": "FenX AI",
   "url": "https://fenx.ai",
-  "logo": "https://i.imgur.com/uR8v7fO.jpeg",
+  "logo": "/fenx.png",
   "founder": {
     "@type": "Person",
     "name": "Shashank Thamali",
